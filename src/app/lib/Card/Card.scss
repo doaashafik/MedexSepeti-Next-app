@@ -1,0 +1,18 @@
+.card-description {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 230px;
+}
+
+.card-body {
+    padding: var(--padding-card, 1rem);
+}
+
+.custom-card-img-container {
+    display: flex;
+    justify-content: center;
+    & img {
+        object-fit: contain;
+    }
+}

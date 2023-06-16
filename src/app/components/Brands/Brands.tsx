@@ -3,7 +3,6 @@ import { brands } from "./Data";
 import Image from "next/image";
 import Link from "next/link";
 import "./Brands.scss";
-import { Fragment } from "react";
 
 const settings = {
     dots: true,
@@ -16,20 +15,23 @@ const settings = {
 }
 export default function Brands() {
     return (
-        <Carousel settings={settings}>
-            {brands.map(brand => (
-                <div key={brand.title}>
-                    <div className="custom-slick-item" key={brand.title}>
-                        <Link href={"#"} className="custom-link-rounded">
-                            <Image
-                                className="custom-brand-rounded"
-                                priority width={130} height={130} src={brand.url}
-                                alt={brand.title} />
-                        </Link>
-                        <h4 className="font-bold text-center">{brand.title}</h4>
+        <section>
+            <h2 className="text-center">Brands</h2>
+            <Carousel settings={settings}>
+                {brands.map(brand => (
+                    <div key={brand.title}>
+                        <div className="custom-slick-item" key={brand.title}>
+                            <Link href={"#"} className="custom-link-rounded">
+                                <Image
+                                    className="custom-brand-rounded"
+                                    priority width={130} height={130} src={brand.url}
+                                    alt={brand.title} />
+                            </Link>
+                            <h4 className="font-bold text-center">{brand.title}</h4>
+                        </div>
                     </div>
-                </div>
-            ))}
-        </Carousel>
+                ))}
+            </Carousel>
+        </section>
     )
 }
