@@ -7,6 +7,7 @@ import {
   categoriesIds,
   sub_categories,
 } from "./Types";
+import "./Navbar.scss";
 
 export default function Navbar() {
   return (

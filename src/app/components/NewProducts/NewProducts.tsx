@@ -19,12 +19,12 @@ const settings = {
 export default async function NewAddedProducts({ promise }: { promise: Promise<productType[]> }) {
     const products = await promise;
     return (
-        <div className="custom-new-product">
+        <div className="custom-product">
             <h2 className="text-center">Products that just Arrived</h2>
             <Carousel settings={settings}>
                 {products.map((product) => (
                     <div key={product.title}>
-                        <Card product={product} />
+                        <Card product={product}  tag="normal"/>
                     </div>))}
             </Carousel>
         </div>

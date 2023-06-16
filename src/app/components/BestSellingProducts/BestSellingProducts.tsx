@@ -2,6 +2,7 @@ import Carousel from "@/app/lib/Carousel/Carousel";
 import Card from "@/app/lib/Card/Card";
 import { productType } from "../NewProducts/Types";
 
+
 const settings = {
     className: "center",
     centerMode: true,
@@ -16,14 +17,13 @@ const settings = {
 };
 export default async function BestSellingProducts({ promise }: { promise: Promise<productType[]> }) {
     const products = await promise;
-    console.log(products, 'best')
     return (
-        <div className="custom-new-product">
-            <h2 className="text-center">Products Best Selling</h2>
+        <div className="custom-product">
+            <h2 className="text-center">Best Selling Products</h2>
             <Carousel settings={settings}>
-                {products.map((product) => (
+                {products.map((product, index) => (
                     <div key={product.title}>
-                        <Card product={product} />
+                        <Card product={product} tag={index <= 4 ? "best-selling": "normal"} />
                     </div>))}
             </Carousel>
         </div>

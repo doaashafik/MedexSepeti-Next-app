@@ -2,3 +2,14 @@
     max-width: 90%;
     margin: 20px auto;
 }
+
+.slick-prev,
+.slick-next,
+.slick-prev:focus,
+.slick-next:focus,
+.slick-prev:hover,
+.slick-next:hover {
+    display: block;
+    background: #999;
+    border-radius: 50%;
+}

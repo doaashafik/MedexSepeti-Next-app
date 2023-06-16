@@ -3,7 +3,7 @@ import "./Card.scss";
 import { productType } from "@/app/components/NewProducts/Types";
 import Link from "next/link";
 
-export default function Card({ product }: { product: productType }) {
+export default function Card({ product, tag }: { product: productType, tag: string }) {
     return (
         <div className="card card-side bg-base-100 shadow-xl">
             <Link href={"#"} className="custom-card-img-container">
@@ -26,9 +26,7 @@ export default function Card({ product }: { product: productType }) {
 
                 </div>
                 <div className="card-actions justify-end">
-                    {product?.tags?.map((tag) => (
-                        <div className="badge badge-outline">{tag}</div>
-                    ))}
+                <div className="badge badge-outline">{tag}</div>
                 </div>
             </div>
         </div>

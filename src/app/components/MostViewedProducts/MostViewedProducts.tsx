@@ -1,5 +1,4 @@
 import Carousel from "@/app/lib/Carousel/Carousel";
-import Image from "next/image";
 import Card from "@/app/lib/Card/Card";
 import { productType } from "../NewProducts/Types";
 
@@ -18,12 +17,12 @@ const settings = {
 export default async function MostViewedProducts({ promise }: { promise: Promise<productType[]> }) {
     const products = await promise;
     return (
-        <div className="custom-new-product">
+        <div className="custom-product">
             <h2 className="text-center">Most Viewed Products</h2>
             <Carousel settings={settings}>
-                {products.map((product) => (
+                {products.map((product, index) => (
                     <div key={product.title}>
-                        <Card product={product} />
+                        <Card product={product} tag={index <= 4 ? "most-viewed": "normal"} />
                     </div>))}
             </Carousel>
         </div>

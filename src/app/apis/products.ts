@@ -7,7 +7,7 @@ export async function getNewProducts(creationDate: string) {
   return res.json()
 }
 export async function getBestSelling() {
-  const res = await fetch(`http://localhost:8080/products?_page=2&_limit=10&sort=price&_order=asc`);
+  const res = await fetch(`http://localhost:8080/products?_page=2&_limit=9&sort=price&_order=asc`);
   return res.json()
 }
 export async function getMostViewed() {
