@@ -1,0 +1,40 @@
+.navbar {
+    padding: 23px;
+    background-color: var(--header-color);
+    color: var(--white);
+}
+.navbar-action-text {
+        font-size: .7em;
+        margin: 5px 0;
+}
+.navbar-action {
+    border-inline-end: 1px solid var(--dark-gray);
+}
+.navbar-action:last-child {
+    border: 0;
+}
+.form-control::placeholder {
+    color: var(--gray);
+    opacity: 1;
+    font-size: small;
+}
+.navbar-search {
+    button,
+    button:hover,
+    button:focus {
+        width: 50px;
+        height: 50px;
+        border-radius: 0 3px 3px 0;
+        background-color: var(--main-color);
+        border: 0;
+    }
+    input {
+        border-radius: 3px 0 0 3px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .navbar-action {
+        border: 0;
+        margin-top: 5px;
+    }
+}

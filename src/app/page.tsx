@@ -2,7 +2,7 @@ import Brands from './components/Brands/Brands'
 import BaseLayout from './components/BaseLayout/BaseLayout'
 // import PromotedProducts from './components/PromotedProducts/PromotedProducts';
 import Divider from './lib/Divider/Divider';
-import ErrorBoundary from "./components/ErrorBoundry";
+import ErrorBoundary from "./components/ErrorBoundry/ErrorBoundry";
 import { getBestSelling, getMostViewed, getNewProducts, getPromotedProducts } from "./apis/products";
 // import NewAddedProducts from './components/NewProducts/NewProducts';
 // import { Suspense } from 'react';

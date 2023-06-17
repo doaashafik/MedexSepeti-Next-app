@@ -1,5 +1,25 @@
-@import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+:root {
+  --main-color: #22b0f0;
+  --sub-main-color: #1d4164;
+  --header-color: #28527a;
+  --green: #19A4E3;
+  --yellow: #f9ba32;
+  --white: #fcfcfc;
+  --shadow: 0px 3px 6px #00000029;
+  --gray: #999;
+  --dark-gray: #5b7084;
+}
+.bg-yellow {
+  background-color: var(--yellow);
 }

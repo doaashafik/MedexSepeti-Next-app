@@ -1,4 +1,9 @@
-import Navbar from "@/app/lib/Navbar/Navbar"
+"use client";
+import Divider from "@/app/lib/Divider/Divider";
+import Header from "@/app/lib/Header/Header"
+import MegaHeader from "@/app/lib/MegaHeader/MegaHeader"
+import SSRProvider from 'react-bootstrap/SSRProvider';
+
 
 export default function BaseLayout({
     children,
@@ -6,9 +11,10 @@ export default function BaseLayout({
     children: React.ReactNode
 }) {
     return (
-        <main>
-            <Navbar />
+        <SSRProvider>
+            <Header />
+            <MegaHeader />
             {children}
-        </main>
+        </SSRProvider>
     )
 }

@@ -1,7 +1,7 @@
 import "./Divider.scss";
 
-export default function Divider() {
+export default function Divider({ className }: { className: string }) {
     return (
-        <div className="divider w-100 custom-divider-margin"/>
+        <div className={className}/>
     )
 }
