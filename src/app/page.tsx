@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Brands from './components/Brands/Brands'
 import BaseLayout from './components/BaseLayout/BaseLayout'
 // import PromotedProducts from './components/PromotedProducts/PromotedProducts';
@@ -5,15 +6,14 @@ import Divider from './lib/Divider/Divider';
 import ErrorBoundary from "./components/ErrorBoundry/ErrorBoundry";
 import { getBestSelling, getMostViewed, getNewProducts, getPromotedProducts } from "./apis/products";
 // import NewAddedProducts from './components/NewProducts/NewProducts';
-// import { Suspense } from 'react';
-// import MostViewedProducts from './components/MostViewedProducts/MostViewedProducts';
+import MostViewedProducts from './components/MostViewedProducts/MostViewedProducts';
 // import BestSellingProducts from './components/BestSellingProducts/BestSellingProducts';
-// import Spinner from './lib/Spinner/Spinner';
+import Spinner from './lib/Spinner/Spinner';
 
 export default async function Home() {
   const promotedPromise = getPromotedProducts();
   // const newProductsPromise = getNewProducts("16/6/2023");
-  // const mostViewedPromise = getMostViewed();
+  const mostViewedPromise = getMostViewed();
   // const getBestSellingPromise = getBestSelling();
   // const [promoted] = await Promise.all([promotedPromise])
   return (
@@ -25,13 +25,13 @@ export default async function Home() {
         <Divider />
         {/* <Suspense fallback={<Spinner />}>
         <NewAddedProducts promise={newProductsPromise} />
-      </Suspense>
-      <Divider />
-      <Suspense fallback={<Spinner />}>
-        <MostViewedProducts promise={mostViewedPromise} />
-      </Suspense>
-      <Divider />
-      <Suspense fallback={<Spinner />}>
+      </Suspense> */}
+        <Divider />
+        <Suspense fallback={<Spinner />}>
+          <MostViewedProducts promise={mostViewedPromise} />
+        </Suspense>
+        <Divider />
+        {/* <Suspense fallback={<Spinner />}>
         <BestSellingProducts promise={getBestSellingPromise} />
       </Suspense> */}
       </ErrorBoundary>

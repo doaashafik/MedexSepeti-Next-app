@@ -1,19 +1,15 @@
-export type settingsType = {
-    dots: boolean,
-    infinite: boolean,
-    speed: number,
-    fade: boolean,
-    slidesToShow: number,
-    slidesToScroll: number,
-    slidesPerRow: number
-    responsive?: {
-        breakpoint: number,
-        settings: {
-          slidesToShow: number,
-          slidesToScroll: number,
-          infinite: boolean,
-          dots: boolean,
-          slidesPerRow: number
-        }
-      }[]
-};
+import {
+  EmblaOptionsType,
+} from 'embla-carousel-react'
+export type PrevNextButtonPropType = {
+  enabled: boolean
+  onClick: () => void
+  color: string
+}
+export type PropType = {
+  slides: number[]
+  options?: EmblaOptionsType;
+  children: React.ReactNode
+  arrowsColor: string;
+  slidesToShow: number
+}

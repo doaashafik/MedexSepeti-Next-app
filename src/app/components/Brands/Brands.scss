@@ -1,12 +1,21 @@
-.custom-brand-rounded {
+.brand-rounded {
     border-radius: 50%;
     width: 130px;
     height: 130px;
     object-fit: contain;
 }
 
-.custom-link-rounded {
-    background: var(--background-white);
+.link-rounded {
+    background-color: var(--white);
     border-radius: 50%;
     display: inline-block;
+}
+.brands {
+    background-color: var(--header-color);
+    color: var(--white);
+    padding: 20px 35px;
+    .brand-text {
+        font-family: initial;
+        position: relative;
+    }
 }

@@ -1,0 +1,42 @@
+.product-card {
+    padding: 35px;
+
+    .embla {
+        --slide-spacing: 0;
+    }
+
+    .card-side {
+        margin: 0 5px;
+        border-radius: 18px;
+        width: 14em;
+    }
+
+    span {
+        font-size: 14px;
+    }
+
+    h3 {
+        color: var(--sub-main-color);
+        font-family: initial;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .action {
+        font-size: 13px;
+    }
+
+    .action-title {
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .badge {
+        background-color: var(--yellow);
+        border-radius: 16px;
+        font-weight: bold;
+    }
+    .emla__arrows button {
+        border-color: var(--header-color);
+    }
+}
