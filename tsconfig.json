@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/db/index.js", "src/app/components/ErrorBoundry/ErrorBoundry.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/db/index.js", "src/app/components/ErrorBoundry/ErrorBoundry.js", "src/app/lib/MegaHeader/MegaHeader.tsx"],
   "exclude": ["node_modules"]
 }

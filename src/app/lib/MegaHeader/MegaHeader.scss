@@ -1,0 +1,98 @@
+.header-container .dropdown-menu {
+    border-radius: 0;
+    border: 0;
+    box-shadow: var(--shadow);
+    padding: 15px;
+}
+
+.header-container {
+    border-bottom: unset;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    margin-bottom: 15px;
+    &>div {
+        padding-inline: 10px;
+    }
+}
+
+.dropdown-toggle:active,
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    color: var(--yellow) !important;
+    background-color: transparent !important;
+    border-block-end-color: var(--yellow);
+}
+
+.dropdown-toggle {
+    background: transparent;
+    border: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border-inline-end: var(--dark-gray);
+    border-block-end: 2px solid transparent;
+    border-radius: 0;
+    font-size: 13px;
+    font-weight: 700;
+    width: 100%;
+    color: var(--header-color);
+}
+.dropdown:nth-child(9) .dropdown-toggle::after {
+    width: 0;
+}
+
+.header-special-offer {
+    background: var(--dark-main-color);
+    color: var(--white);
+    border-radius: 4px;
+    margin-block: 5px;
+}
+
+.header-special-offer p {
+    margin: 0;
+    font-size: .8em;
+    padding: 12px;
+}
+
+.navbar .container-fluid,
+.header .container-fluid {
+    padding-inline: 35px;
+}
+
+.header-category-logo {
+    border-radius: 5px;
+}
+
+
+
+@media screen and (min-width: 992px) {
+    .dropdown-toggle::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        right: -1px;
+        height: 27px;
+        top: 25%;
+        z-index: 333;
+        background: var(--dark-gray);
+        border: 0;
+    }
+    .header-container .dropdown-menu {
+        --bs-dropdown-min-width: 75em;
+        inset: -2px auto auto -55px !important;
+    } 
+}
+@media screen and (max-width: 992px) {
+    .header .container-fluid {
+        flex-direction: column;
+        height: 1000px;
+    }
+    .dropdown-toggle::after {
+        display: none;
+    }
+    .mega-header {
+        display: none;
+    }
+}

@@ -3,6 +3,13 @@
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
 
 button:focus {
   outline: none !important;
@@ -19,6 +26,10 @@ button:focus {
   --shadow: 0px 3px 6px #00000029;
   --gray: #999;
   --dark-gray: #5b7084;
+  --dark-main-color: #283C79;
+}
+.font-bold {
+  font-weight: bold;
 }
 .bg-yellow {
   background-color: var(--yellow);

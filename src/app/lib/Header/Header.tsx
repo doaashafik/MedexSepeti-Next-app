@@ -1,9 +1,8 @@
 "use client";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -16,7 +15,8 @@ import UserIcon from "@/app/assets/images/user_icon.svg";
 import CartIcon from "@/app/assets/images/cart_fill_icon.svg";
 import FavouriteIcon from "@/app/assets/images/heart_fill_icon.svg";
 import "./Header.scss";
-import Divider from "../Divider/Divider";
+import Divider from "@/app/lib/Divider/Divider";
+import OffCanvasComponent from "../OffCanvas/OffCanvas";
 
 const IconWithText = ({ image, text }: { image: string, text: string }) => {
   return (
@@ -27,41 +27,46 @@ const IconWithText = ({ image, text }: { image: string, text: string }) => {
   )
 }
 function MegaHeader() {
+  const [openCanvas, setOpenCanvas] = React.useState(false);
   return (
     <Fragment>
       <Navbar expand="lg">
         <Container fluid>
           <Row className="w-100 align-items-center">
-            <Col md={3} xs={12}>
+            <Col lg={4}>
               <Link href="#" className="normal-case text-xl">
                 <Image priority width={230} height={55} alt="medex-logo" src={Logo} />
               </Link>
             </Col>
-            <Col md={6} xs={12}>
+            <Col lg={5}>
               <Row>
-                <Col xs={1}>
-                  <Navbar.Toggle aria-controls="navbarScroll" />
-                </Col>
-                <Col xs={9}>
-                  <Form className="d-flex navbar-search">
-                    <Form.Control
-                      type="search"
-                      placeholder="Search by product name,category and type…"
-                      aria-label="Search"
-                    />
-                    <Button variant="outline-success d-flex justify-content-center">
-                      <Image src={SearchIcon} priority width={36} height={36} alt="search-icon" />
-                    </Button>
-                  </Form></Col>
+              <Col lg={12} className="navbar-form-container">
+              <OffCanvasComponent
+                handleShow={() => setOpenCanvas(true)}
+                handleClose={() => setOpenCanvas(false)}
+                show={openCanvas} 
+              />
+              <Form className="d-flex navbar-search">
+                <Form.Control
+                  type="search"
+                  placeholder="Search by product name,category and type…"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success d-flex justify-content-center">
+                  <Image src={SearchIcon} priority width={36} height={36} alt="search-icon" />
+                </Button>
+              </Form>
+
+              </Col>
               </Row>
             </Col>
-            <Col md={3} xs={12}>
+            <Col lg={3} sm={3}>
               <Nav
                 className="navbar-actions d-flex flex-row justify-content-evenly"
               >
-                  <IconWithText text="Login" image={UserIcon} />
-                  <IconWithText text="Favourite" image={FavouriteIcon} />
-                  <IconWithText text="My Cart" image={CartIcon} />
+                <IconWithText text="Login" image={UserIcon} />
+                <IconWithText text="Favourite" image={FavouriteIcon} />
+                <IconWithText text="My Cart" image={CartIcon} />
               </Nav>
             </Col>
           </Row>

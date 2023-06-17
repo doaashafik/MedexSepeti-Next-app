@@ -13,7 +13,9 @@ export default function BaseLayout({
     return (
         <SSRProvider>
             <Header />
+            <section className="mega-header">
             <MegaHeader />
+            </section>
             {children}
         </SSRProvider>
     )
