@@ -1,8 +1,11 @@
 import './globals.scss'
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
-
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
 export const metadata = {
   title: 'Medexsepeti Home Page',
   description: 'Generated with Next.js',
@@ -14,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={roboto.className}>      
+      <body>{children}</body>
     </html>
   )
 }

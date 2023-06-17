@@ -1,3 +1,5 @@
+import 'server-only';
+
 export async function getPromotedProducts() {
     const res = await fetch(`http://localhost:8080/promotedProducts`);
     return res.json()
