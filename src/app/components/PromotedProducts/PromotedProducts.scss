@@ -1,3 +1,28 @@
-.custom-promoted-img-size {
-    width: 100%;
+.promoted-products {
+    position: relative;
+    .embla {
+        padding: 0 35px;
+        border-radius: 5px;
+    }
+
+    .embla__button--prev {
+        left: 2em;
+    }
+
+    .embla__button--next {
+        right: 2em;
+    }
+
+    .emla__arrows.arrows {
+        position: absolute;
+        content: "";
+        top: 100%;
+    }
+}
+.promoted-product-divider {
+    border-bottom: 0;
+    border-bottom-style: none;
+    border-style: solid;
+    margin-top: 20px;
+    border-image: linear-gradient(to left, rgb(255, 255, 255), var(--yellow), var(--yellow), rgb(255, 255, 255)) 100% 1;
 }

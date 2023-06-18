@@ -13,9 +13,9 @@
 .brands {
     background-color: var(--header-color);
     color: var(--white);
-    padding: 20px 35px;
+    position: relative;
+    padding: 35px;
     .brand-text {
         font-family: initial;
-        position: relative;
     }
 }

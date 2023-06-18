@@ -1,3 +1,5 @@
+import { productType } from '@/app/components/NewProducts/Types'
+import { promotedProductsTypes } from '@/app/components/PromotedProducts/Types'
 import {
   EmblaOptionsType,
 } from 'embla-carousel-react'
@@ -11,5 +13,6 @@ export type PropType = {
   options?: EmblaOptionsType;
   children: React.ReactNode
   arrowsColor: string;
-  slidesToShow: number
+  slidesToShow: number;
+  data?: promotedProductsTypes[]
 }

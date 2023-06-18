@@ -1,6 +1,6 @@
 .product-card {
     padding: 35px;
-
+    position: relative;
     .embla {
         --slide-spacing: 0;
     }
@@ -19,7 +19,6 @@
         color: var(--sub-main-color);
         font-family: initial;
         font-weight: bold;
-        position: relative;
     }
 
     .action {

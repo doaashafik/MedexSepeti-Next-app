@@ -1,32 +1,30 @@
-import Carousel from "@/app/lib/Carousel/Carousel";
-import Image from "next/image";
+"use client";
+
 import { productType } from "./Types";
 import Card from "@/app/lib/Card/Card";
+import EmblaCarousel from "@/app/lib/Carousel/Carousel";
+import { EmblaOptionsType } from "embla-carousel-react";
 import "./NewProducts.scss";
 
-const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    slidesToShow: 3,
-    dots: false,
-    fade: false,
-    speed: 500,
-    rows: 2,
-    slidesPerRow: 1,
-    slidesToScroll: 1
-};
-export default async function NewAddedProducts({ promise }: { promise: Promise<productType[]> }) {
+
+const OPTIONS: EmblaOptionsType = {
+    slidesToScroll: 'auto',
+    containScroll: 'trimSnaps',
+}
+const SLIDE_COUNT = 15
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
+export default async function MostViewedProducts({ promise }: { promise: Promise<productType[]> }) {
     const products = await promise;
     return (
-        <div className="custom-product">
-            <h2 className="text-center">Products that just Arrived</h2>
-            <Carousel settings={settings}>
-                {products.map((product) => (
-                    <div key={product.title}>
-                        <Card product={product}  tag="normal"/>
+        <div className="product-card">
+            <h3>Products That Just Arrived</h3>
+            <EmblaCarousel options={OPTIONS} slides={SLIDES} data={[]} arrowsColor={"#22b0f0"} slidesToShow={5}>
+                {products.map((product, index) => (
+                    <div key={index}>
+                        <Card product={product} tag={"normal"} />
                     </div>))}
-            </Carousel>
+            </EmblaCarousel>
         </div>
     );
 }
