@@ -7,7 +7,7 @@ const Content = ({title, value}: { title: string, value: number | string}) => {
     return (
         <section className="action">
             <p className="action-title">{title}</p>
-            <p>{value}</p>
+            <p>{value || "N/A"}</p>
         </section>
     )
 }
