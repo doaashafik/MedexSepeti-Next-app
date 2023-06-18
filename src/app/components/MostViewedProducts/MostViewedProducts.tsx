@@ -16,7 +16,7 @@ export default async function MostViewedProducts({ promise }: { promise: Promise
     const products = await promise;
     return (
         <div className="product-card">
-            <h3>Most Viewed Products</h3>
+            <h4>Most Viewed Products</h4>
             <EmblaCarousel options={OPTIONS} 
             slides={SLIDES} arrowsColor={"#22b0f0"} data={[]} slidesToShow={5}>
                 {products.map((product, index) => (

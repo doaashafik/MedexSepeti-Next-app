@@ -29,13 +29,11 @@ export default async function Home() {
         <Divider />
         <Brands />
         <Suspense fallback={<Spinner />}>
-        <NewAddedProducts promise={newProductsPromise} />
-      </Suspense>
-        <Divider />
-
-        <Suspense fallback={<Spinner />}>
           <BestSellingProducts promise={getBestSellingPromise} />
         </Suspense>
+        <Suspense fallback={<Spinner />}>
+        <NewAddedProducts promise={newProductsPromise} />
+      </Suspense>
       </ErrorBoundary>
     </BaseLayout>
   )

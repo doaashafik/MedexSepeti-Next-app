@@ -17,7 +17,7 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 export default function Brands() {
   return (
     <section className="brands">
-      <h3 className="text-start font-bold brand-text">Brands</h3>
+      <h4 className="text-start font-bold brand-text">Brands</h4>
       <EmblaCarousel options={OPTIONS} slides={SLIDES} data={[]} arrowsColor={"#fff"} slidesToShow={8}>
         {brands.map((brand, index) => (
           <div className="embla__slide" key={index}>
