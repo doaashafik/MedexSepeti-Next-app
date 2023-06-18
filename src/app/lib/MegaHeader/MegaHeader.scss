@@ -11,7 +11,7 @@
     box-shadow: var(--shadow);
     margin-bottom: 15px;
     &>div {
-        padding-inline: 10px;
+        padding-inline: 15px;
     }
 }
 
@@ -53,7 +53,7 @@
 .header-special-offer p {
     margin: 0;
     font-size: .8em;
-    padding: 12px;
+    padding: 15px;
 }
 
 .navbar .container-fluid,
@@ -80,8 +80,9 @@
         border: 0;
     }
     .header-container .dropdown-menu {
-        --bs-dropdown-min-width: 75em;
+        --bs-dropdown-min-width: 77em;
         inset: -2px auto auto -55px !important;
+        margin-inline: 2em;
     } 
 }
 @media screen and (max-width: 992px) {

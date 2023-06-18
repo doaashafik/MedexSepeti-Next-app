@@ -19,7 +19,7 @@ export default function MegaHeader() {
       </Link>
         {
           itemsIds.map(id => (
-            <DropdownButton variant="default" id="dropdown-item-button" key={id} title={main_categories[id]}>
+            <DropdownButton variant="default" id="dropdown-item-button" key={id} title={<span>{main_categories[id]}</span>}>
               <section className="header-mega-menu">
                 <Container fluid>
                   <Row>
