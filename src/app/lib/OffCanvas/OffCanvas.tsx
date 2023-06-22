@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { OffCanvasType } from './Types';
 import Navbar from 'react-bootstrap/Navbar';
-import MegaHeader from '../MegaHeader/MegaHeader';
 
 function OffCanvasComponent({ handleShow, handleClose, show }: OffCanvasType) {
 
@@ -13,7 +12,6 @@ function OffCanvasComponent({ handleShow, handleClose, show }: OffCanvasType) {
             <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton className="justify-content-end">
                 </Offcanvas.Header>
-                <MegaHeader />
             </Offcanvas>
         </>
     );

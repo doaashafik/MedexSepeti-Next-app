@@ -1,7 +1,7 @@
 "use client";
 import Divider from "@/app/lib/Divider/Divider";
 import Header from "@/app/lib/Header/Header"
-import MegaHeader from "@/app/lib/MegaHeader/MegaHeader"
+import MegaHeader from "@/app/lib/MegaHeader/MegaHeaderDesktop"
 import SSRProvider from 'react-bootstrap/SSRProvider';
 
 
@@ -13,7 +13,7 @@ export default function BaseLayout({
     return (
         <SSRProvider>
             <Header />
-            <section className="mega-header">
+            <section className="mega-header-desktop">
             <MegaHeader />
             </section>
             {children}
