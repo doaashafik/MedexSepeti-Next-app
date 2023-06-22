@@ -17,7 +17,7 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 export default async function MostViewedProducts({ promise }: { promise: Promise<productType[]> }) {
     const products = await promise;
     return (
-        <div className="product-card">
+        <div className="product-card products-vertical-carousel">
             <h4>Products That Just Arrived</h4>
             <EmblaCarousel options={OPTIONS} slides={SLIDES} data={[]} arrowsColor={"#22b0f0"} slidesToShow={5}>
                 {products.map((product, index) => (
