@@ -1,12 +1,11 @@
 "use client";
-import React, { Fragment } from "react";
+import React, { useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import usePopper from "@restart/ui/usePopper";
-import debounce from "lodash/debounce";
+import { useHookMegaHeader } from "./useHookMegaHeader";
 import {
   itemsIds,
   sub_categories_logos,
@@ -15,17 +14,23 @@ import {
 } from "./Types";
 import "./MegaHeader.scss";
 
-
 export default function MegaHeader() {
   const {
     isListOpen,
-    debounceMouseEnter,
+    debounceMouseOver,
     setListOpen,
     styles,
     attributes,
     setPopperElement,
     setReferenceElement,
   } = useHookMegaHeader();
+
+
+  const onMouseEnterCallback = useCallback((e:React.MouseEvent) => {
+    let target = e.target as HTMLElement;
+    debounceMouseOver(target.id)
+  }, []);
+  const onMouseLeaveCallback = useCallback(() => setListOpen(null), [isListOpen])
 
   return (
     <header className="header">
@@ -43,19 +48,19 @@ export default function MegaHeader() {
           {itemsIds.map((id) => (
             <li
               key={id}
-              onMouseLeave={() =>  debounceMouseEnter(null)}
-              onMouseEnter={() => debounceMouseEnter(id)}
+              onMouseLeave={onMouseLeaveCallback}
+              onMouseEnter={onMouseEnterCallback}
             >
               <Link
                 href="#"
+                id={`${id}`}
                 className="d-flex align-items-center w-100 h-100 dropdown-toggle"
               >
                 {main_categories[id]}
               </Link>
               <section
-                className={`w-100 dropdown-menu ${
-                  isListOpen === id ? "show-dropdown-menu" : ""
-                }`}
+                className={`w-100 dropdown-menu ${isListOpen == id ? "show-dropdown-menu" : ""
+                  }`}
                 ref={setPopperElement}
                 {...attributes.popper}
                 style={styles.popper as object}
@@ -64,8 +69,7 @@ export default function MegaHeader() {
                   <Row>
                     <Col lg={7} md={12}>
                       <Row>
-                        {sub_categories
-                          .filter((item) => item.id === id)
+                        {sub_categories[id]
                           .map((category) => {
                             return (
                               <Col lg={4} md={12} key={category.name}>
@@ -114,24 +118,3 @@ export default function MegaHeader() {
 
 
 
-function useHookMegaHeader() {
-  const [referenceElement, setReferenceElement] =
-    React.useState<HTMLElement | null>(null);
-  const [popperElement, setPopperElement] = React.useState<HTMLElement | null>(
-    null
-  );
-  const { styles, attributes } = usePopper(referenceElement, popperElement, {
-    placement: "bottom-start",
-  });
-  const [isListOpen, setListOpen] = React.useState<number | null>(null);
-const debounceMouseEnter = debounce((id) => setListOpen(id), 200);
-  return {
-    isListOpen,
-    setListOpen,
-    debounceMouseEnter,
-    styles,
-    attributes,
-    setPopperElement,
-    setReferenceElement
-  };
-}
