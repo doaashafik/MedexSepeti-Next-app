@@ -1,16 +1,14 @@
 .product-card {
     padding: 35px;
     position: relative;
-    .embla {
-        --slide-spacing: 0;
-    }
-
-    .card-side {
-        margin: 0 5px;
+    .horizontal-card {
         border-radius: 18px;
-        width: 14em;
+        padding: 5px;
+        overflow: hidden;
+        padding: 0px;
+        margin-block: 10px;
+        border: 2px solid #eee;
     }
-
     span {
         font-size: 14px;
     }
@@ -35,7 +33,9 @@
         border-radius: 16px;
         font-weight: bold;
     }
+
     .emla__arrows button {
         border-color: var(--header-color);
     }
+
 }
